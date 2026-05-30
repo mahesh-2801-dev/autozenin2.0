@@ -22,28 +22,34 @@ const Demo = () => {
                 </p>
             </div>
 
-            <div className="max-w-5xl mx-auto mb-24">
+            <div className="max-w-4xl mx-auto mb-24 flex justify-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="aspect-video glass rounded-3xl border-primary/20 flex flex-col items-center justify-center relative overflow-hidden group cursor-pointer"
+                    className="glass rounded-3xl border-primary/20 relative overflow-hidden group shadow-[0_0_50px_rgba(0,180,216,0.1)] inline-block"
                 >
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center z-10 shadow-[0_0_40px_rgba(0,180,216,0.5)] group-hover:scale-110 transition-transform">
-                        <Play className="text-background fill-current ml-1" size={32} />
-                    </div>
-                    <p className="mt-6 text-primary font-bold text-lg z-10">Watch Demo Video</p>
+                    <video
+                        src="/demovideo.mp4"
+                        controls
+                        autoPlay
+                        muted
+                        loop
+                        className="w-full h-auto max-h-[70vh] object-contain"
+                    />
                 </motion.div>
             </div>
 
             <div className="text-center mb-32">
-                <motion.button
+                <motion.a
+                    href="https://cold-call-multi-languages.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(0, 180, 216, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-12 py-6 bg-primary text-background font-bold text-2xl rounded-2xl shadow-[0_0_30px_rgba(0,180,216,0.3)]"
+                    className="inline-block px-12 py-6 bg-primary text-background font-bold text-2xl rounded-2xl shadow-[0_0_30px_rgba(0,180,216,0.3)] cursor-pointer"
                 >
                     Try the Voice Agent Now
-                </motion.button>
+                </motion.a>
             </div>
 
             <div className="mb-24">

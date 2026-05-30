@@ -66,12 +66,7 @@ const Navbar = () => {
                         </Link>
                     ))}
 
-                    <Link
-                        to="/contact"
-                        className="px-6 py-2 bg-primary text-background font-bold rounded-full text-sm shadow-[0_0_20px_rgba(0,180,216,0.3)] hover:shadow-[0_0_25px_rgba(0,180,216,0.5)] transition-all"
-                    >
-                        Talk To Us
-                    </Link>
+
                 </div>
 
                 {/* Mobile Toggle */}
@@ -112,19 +107,7 @@ const Navbar = () => {
                                 </Link>
                             </motion.div>
                         ))}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                        >
-                            <Link
-                                to="/contact"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="px-8 py-4 bg-primary text-background font-bold rounded-full text-lg shadow-[0_0_20px_rgba(0,180,216,0.3)]"
-                            >
-                                Talk To Us
-                            </Link>
-                        </motion.div>
+
                     </motion.div>
                 )}
             </AnimatePresence>

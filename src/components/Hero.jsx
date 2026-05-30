@@ -46,17 +46,20 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <motion.button
+                        <motion.a
+                            href="https://cold-call-multi-languages.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 180, 216, 0.4)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="group relative px-8 py-4 bg-primary text-background font-bold rounded-xl flex items-center space-x-2 overflow-hidden"
+                            className="group relative px-8 py-4 bg-primary text-background font-bold rounded-xl flex items-center space-x-2 overflow-hidden cursor-pointer"
                         >
                             <span className="relative z-10">Try the Voice Agent</span>
                             <Play size={18} className="relative z-10 fill-current" />
                             <motion.div
                                 className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
                             />
-                        </motion.button>
+                        </motion.a>
 
                         <motion.button
                             whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 180, 216, 0.1)" }}

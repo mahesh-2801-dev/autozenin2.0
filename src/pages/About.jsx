@@ -58,7 +58,7 @@ const About = () => {
         >
           <h2 className="text-3xl font-heading font-bold mb-6">Our Roots</h2>
           <p className="text-text/60 text-lg mb-4">
-            Based in Vijayawada, Andhra Pradesh. Serving the world.
+            Based in Vijayawada, Andhra Pradesh. Serving businesses across India.
           </p>
           <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
