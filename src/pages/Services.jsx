@@ -1,44 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, PhoneCall, Mail, Search, Globe, Layout, Calendar, Database } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Bot, Globe, Search } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const ServiceSection = ({ icon: Icon, title, items, side = 'left' }) => (
-    <motion.div
-        initial={{ opacity: 0, x: side === 'left' ? -50 : 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="mb-20 grid md:grid-cols-2 gap-12 items-center"
-    >
-        <div className={side === 'right' ? 'md:order-2' : ''}>
-            <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
-                <Icon className="text-primary" size={32} />
+import aiAgentsImg from '../assets/images/ai agents.png';
+import customImg from '../assets/images/custom.png';
+import dmImg from '../assets/images/dm.png';
+
+const ServiceSection = ({ icon: Icon, title, items, side = 'left', image }) => {
+    const navigate = useNavigate();
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: side === 'left' ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 grid md:grid-cols-2 gap-12 items-center"
+        >
+            <div className={side === 'right' ? 'md:order-2' : ''}>
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
+                    <Icon className="text-primary" size={32} />
+                </div>
+                <h2 className="text-4xl font-heading font-bold mb-6">{title}</h2>
+                <div className="space-y-4">
+                    {items.map((item, i) => (
+                        <div key={i} className="flex items-center space-x-3 text-text/70">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                            <span className="font-body text-lg">{item}</span>
+                        </div>
+                    ))}
+                </div>
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => navigate('/contact')}
+                    className="mt-10 px-8 py-3 border border-primary/50 text-primary font-bold rounded-xl hover:bg-primary/5 transition-all cursor-pointer"
+                >
+                    Talk To Us About This →
+                </motion.button>
             </div>
-            <h2 className="text-4xl font-heading font-bold mb-6">{title}</h2>
-            <div className="space-y-4">
-                {items.map((item, i) => (
-                    <div key={i} className="flex items-center space-x-3 text-text/70">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                        <span className="font-body text-lg">{item}</span>
-                    </div>
-                ))}
+            <div className={`aspect-video rounded-3xl overflow-hidden relative border border-primary/10 ${side === 'right' ? 'md:order-1' : ''}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10" />
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                />
             </div>
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-10 px-8 py-3 border border-primary/50 text-primary font-bold rounded-xl hover:bg-primary/5 transition-all"
-            >
-                Talk To Us About This →
-            </motion.button>
-        </div>
-        <div className={`aspect-video rounded-3xl glass border-primary/10 overflow-hidden relative ${side === 'right' ? 'md:order-1' : ''}`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <Icon className="text-primary/20" size={120} />
-            </div>
-        </div>
-    </motion.div>
-);
+        </motion.div>
+    );
+};
 
 const Services = () => {
     return (
@@ -60,6 +72,7 @@ const Services = () => {
             <ServiceSection
                 icon={Bot}
                 title="AI Agents & Automation"
+                image={aiAgentsImg}
                 items={[
                     "Voice agents for inbound/outbound calls",
                     "Intelligent chat agents for 24/7 support",
@@ -71,6 +84,7 @@ const Services = () => {
             <ServiceSection
                 icon={Globe}
                 title="Custom Software"
+                image={customImg}
                 items={[
                     "High-performance business websites",
                     "Operational dashboards & portals",
@@ -83,6 +97,7 @@ const Services = () => {
             <ServiceSection
                 icon={Search}
                 title="Digital Marketing"
+                image={dmImg}
                 items={[
                     "Data-driven SEO strategies",
                     "Paid ad funnel optimization",
