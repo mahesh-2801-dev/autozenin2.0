@@ -21,9 +21,9 @@ const Testimonials = () => {
             id: 2,
             project: "E-Commerce & Inventory Management Build",
             quote: "The team at Autozenin built our entire e-commerce platform and integrated a custom backend inventory management system that completely streamlined our daily operations. Before them, scaling felt impossible due to backend chaos. Now, our storefront runs flawlessly, our stock updates in real-time, and we can handle high sales volume with zero stress. Truly a game-changer for our business.",
-            name: "Founder",
+            name: "Gayatri",
             role: "Founder",
-            company: "VoltStore",
+            company: "SilverbyAura",
             image: review1
         }
     ];
