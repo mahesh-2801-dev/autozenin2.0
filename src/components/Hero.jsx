@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Play } from 'lucide-react';
 import logo from '../assets/logo.jpeg';
 
 const Hero = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             <div className="container mx-auto px-6 relative z-10 text-center">
@@ -64,7 +67,8 @@ const Hero = () => {
                         <motion.button
                             whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 180, 216, 0.1)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-4 border border-primary/50 text-primary font-bold rounded-xl flex items-center space-x-2 transition-colors"
+                            onClick={() => navigate('/contact')}
+                            className="px-8 py-4 border border-primary/50 text-primary font-bold rounded-xl flex items-center space-x-2 transition-colors cursor-pointer"
                         >
                             <span>Talk to Us</span>
                             <ChevronRight size={18} />

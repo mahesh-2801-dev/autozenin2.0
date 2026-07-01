@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Bot, Code, BarChart3, ArrowUpRight } from 'lucide-react';
 
@@ -28,13 +28,13 @@ const ServiceCard = ({ icon: Icon, title, description, delay }) => {
                     {description}
                 </p>
 
-                <a
-                    href="#services"
-                    className="flex items-center space-x-2 text-sm font-bold text-secondary hover:text-primary transition-colors"
+                <Link
+                    to="/services"
+                    className="flex items-center space-x-2 text-sm font-bold text-secondary hover:text-primary transition-colors cursor-pointer"
                 >
                     <span>Learn More</span>
                     <ArrowUpRight size={16} />
-                </a>
+                </Link>
             </div>
 
             {/* Light Sweep Animation */}
