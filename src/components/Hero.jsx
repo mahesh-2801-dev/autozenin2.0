@@ -50,7 +50,7 @@ const Hero = () => {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <motion.a
-                            href="https://cold-call-multi-languages.vercel.app/"
+                            href="https://business-voice-call-agent-frontend.vercel.app/"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 180, 216, 0.4)" }}
