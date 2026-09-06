@@ -16,7 +16,7 @@ const contactMethods = [
     {
         icon: Mail,
         title: 'Email',
-        value: 'contact@autozenin.com',
+        value: 'autozenin26@gmail.com',
         link: 'https://mail.google.com/mail/?view=cm&fs=1&to=contact@autozenin.com',
         color: 'bg-primary/10 text-primary',
         accent: 'bg-primary',
