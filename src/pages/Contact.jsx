@@ -67,7 +67,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <p className="text-xs text-text/40 uppercase tracking-widest font-body">Email Us</p>
-                                <p className="text-lg font-bold group-hover:text-secondary transition-colors">contact@autozenin.com</p>
+                                <p className="text-lg font-bold group-hover:text-secondary transition-colors">autozenin26@gmail.com</p>
                             </div>
                         </a>
 
